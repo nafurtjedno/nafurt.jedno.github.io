@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Svadba Janka a Daniel - Domov</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html" class="nav-brand">J & D</a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Domov</a>
+        <a href="o_nas.html">O nás</a>
+        <a href="svadba.html">Svadba</a>
+        <a href="hostina.html">Hostina</a>
+      </div>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </nav>
+    <header class="hero">
+      <h1 class="names">Janka & Daniel</h1>
+
+      <div class="countdown-container">
+        <h2 id="countdown">000 dní 00:00:00</h2>
+        <p class="date">1. MÁJ 2026</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="info-section">
+        <h2>Tešíme sa na Vás!</h2>
+        <p>S radosťou oznamujeme, že sa chystáme prijať sviatosť manželstva.</p>
+        <div class="details-grid">
+          <div>
+            <h3>Obrad</h3>
+            <p>Kostol Márie Pomocnice</p>
+            <p>Saleziáni, Michalovce</p>
+            <p class="time">14:00 hod.</p>
+          </div>
+          <div>
+            <h3>Kontakt</h3>
+            <p>
+              Pre bližšie detaily prejdite na sekcie **Svadba** a **Hostina**.
+            </p>
+            <p class="time">RSVP do 1.4.2026</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="login-section" class="login-form-section">
+        <hr />
+        <h3>Pre detaily Hostiny</h3>
+        <p>Prejdite prosím na stránku **Hostina**.</p>
+      </section>
+
+      <section
+        id="private-content"
+        class="private-section"
+        style="display: none"
+      >
+        <h2>🥳 Toto je starý obsah. Presuňte ho do Hostina.html</h2>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>V prípade otázok nás kontaktujte na:</p>
+      <p><a href="mailto:nafurt.jedno@gmail.com">nafurt.jedno@gmail.com</a></p>
+      <p>© Janka & Daniel 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

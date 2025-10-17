@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Svadba Janka a Daniel - O nás</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html" class="nav-brand">J & D</a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Domov</a>
+        <a href="o_nas.html" class="active">O nás</a>
+        <a href="svadba.html">Svadba</a>
+        <a href="hostina.html">Hostina</a>
+      </div>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </nav>
+
+    <header class="page-header">
+      <h1>Naša Časová Os</h1>
+    </header>
+
+    <main class="container">
+      <section class="timeline-section">
+        <div class="timeline-card">
+          <div class="timeline-date">23. 10. 2025</div>
+          <div class="timeline-content">
+            <div class="gallery" id="gallery-zasnuby">
+              <img
+                src="foto\hniezdo.jpg"
+                alt="Zásnuby Foto 1"
+                class="gallery-image active-image"
+              />
+              <img
+                src="foto\hniezdo.jpg"
+                alt="Zásnuby Foto 2"
+                class="gallery-image"
+              />
+              <img
+                src="foto\rande.jpg"
+                alt="Zásnuby Foto 3"
+                class="gallery-image"
+              />
+              <img
+                src="foto\hehe.jpg"
+                alt="Zásnuby Foto 4"
+                class="gallery-image"
+              />
+              <button class="prev-btn" onclick="prevImage('gallery-zasnuby')">
+                ❮
+              </button>
+              <button class="next-btn" onclick="nextImage('gallery-zasnuby')">
+                ❯
+              </button>
+            </div>
+            <h3>💍 Naše Zásnuby (Doplní sa)</h3>
+            <p>
+              Dátum, na ktorý Janka nezabudne! Daniel sa odhodlal a po rokoch
+              vzťahu pokľakol v malebnom prostredí. Bolo to prekvapenie plné
+              emócií a radosti. Už sa tešíme na "Áno" v kostole!
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-date">31. 08. 2025</div>
+          <div class="timeline-content">
+            <div class="gallery" id="gallery-dovolenka">
+              <img
+                src="foto\grecko.jpg"
+                alt="Dovolenka Foto 1"
+                class="gallery-image active-image"
+              />
+              <img
+                src="foto\IMG_1791.jpg"
+                alt="Dovolenka Foto 2"
+                class="gallery-image"
+              />
+              <button class="prev-btn" onclick="prevImage('gallery-dovolenka')">
+                ❮
+              </button>
+              <button class="next-btn" onclick="nextImage('gallery-dovolenka')">
+                ❯
+              </button>
+            </div>
+            <h3>🏖️ Grécko - Prvýkrát spolu pri mori</h3>
+            <p>
+              Prvýkrát sme spoločne precestovali Grécko, objavili jeho krásy a
+              samozrejme, Daniel po prvýkrát ochutnal originálne grécke
+              tzatziki! Nezabudnuteľné leto plné slnka a oddychu.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-date">22. 12. 2024</div>
+          <div class="timeline-content">
+            <div class="gallery" id="gallery-byvanie">
+              <img
+                src="foto\grecko.jpg"
+                alt="Bývanie Foto 1"
+                class="gallery-image active-image"
+              />
+              <img
+                src="foto\IMG_1791.jpg"
+                alt="Bývanie Foto 2"
+                class="gallery-image"
+              />
+              <img
+                src="foto\IMG_8008.jpg"
+                alt="Bývanie Foto 3"
+                class="gallery-image"
+              />
+              <button class="prev-btn" onclick="prevImage('gallery-byvanie')">
+                ❮
+              </button>
+              <button class="next-btn" onclick="nextImage('gallery-byvanie')">
+                ❯
+              </button>
+            </div>
+            <h3>🔑 Zariaďujeme si hniezdočko lásky</h3>
+            <p>
+              Tesne pred Vianocami sme sa presťahovali do nášho prvého
+              spoločného bytu. Veľa skrutkovania, veľa kávy a teraz je to
+              konečne náš domov. Fotka gauča, na ktorom po zariaďovaní zaspal
+              Daniel!
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-date">18. 11. 2021</div>
+          <div class="timeline-content">
+            <div class="gallery" id="gallery-rande">
+              <img
+                src="foto\rande.jpg"
+                alt="Rande Foto 1"
+                class="gallery-image active-image"
+              />
+              <button class="prev-btn" onclick="prevImage('gallery-rande')">
+                ❮
+              </button>
+              <button class="next-btn" onclick="nextImage('gallery-rande')">
+                ❯
+              </button>
+            </div>
+            <h3>☕ Prvé oficiálne rande</h3>
+            <p>
+              Pamätný deň, kedy nás zoznámili naši kamaráti. Prechádzka mestským
+              parkom a nesmelá káva. Od tej chvíle to už išlo rýchlo a vedeli
+              sme, že k sebe patríme.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-date">25. 07. 2021</div>
+          <div class="timeline-content">
+            <div class="gallery" id="gallery-prve">
+              <img
+                src="foto\IMG_7942.JPG"
+                alt="Prvá fotka"
+                class="gallery-image active-image"
+              />
+            </div>
+            <h3>📸 Naša úplne prvá fotka!</h3>
+            <p>
+              Zoznámenie prebehlo na letnom festivale. Táto, trochu rozmazaná
+              fotka, je náš prvý spoločný dôkaz lásky. Začiatok všetkého!
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>V prípade otázok nás kontaktujte na:</p>
+      <p><a href="mailto:nafurt.jedno@gmail.com">nafurt.jedno@gmail.com</a></p>
+      <p>© Janka & Daniel 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
