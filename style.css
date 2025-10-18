@@ -56,6 +56,29 @@ h3 {
   border-radius: 5px;
 }
 
+/* Pridajte do style.css */
+.countdown-details {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  text-align: left;
+  max-width: 250px; /* Zarovnanie na stred menšieho bloku */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.countdown-details p {
+  margin: 3px 0;
+  color: white;
+  font-size: 0.9em;
+  font-weight: 300;
+}
+
+.countdown-details strong {
+  font-weight: bold;
+  color: var(--background-color); /* Farba pozadia (béžová) pre kontrast */
+}
+
 #countdown {
   font-size: 2.5em; /* Veľké odpočítavanie */
   color: white;

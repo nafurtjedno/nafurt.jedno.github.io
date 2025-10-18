@@ -1,31 +1,74 @@
 // === Odpočítavanie ===
+// === Odpočítavanie (AKTUALIZOVANÁ VERZIA) ===
+
+// Nový dátum a čas: 1. Máj 2026 o 15:00:00
 const weddingDate = new Date("May 1, 2026 15:00:00").getTime();
+
+const MS_PER_DAY = 1000 * 60 * 60 * 24;
+const MS_PER_WEEK = MS_PER_DAY * 7;
 
 const countdownFunction = setInterval(function () {
   const now = new Date().getTime();
-  const distance = weddingDate - now;
+  let distance = weddingDate - now;
 
-  // Matematika pre dni, hodiny, minúty a sekundy
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor(
-    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-  );
+  // Keď odpočítavanie skončí
+  if (distance < 0) {
+    clearInterval(countdownFunction);
+    document.getElementById("countdown").innerHTML = "Sme už manželia!";
+    document.getElementById("countdown-details").innerHTML = "";
+    return;
+  }
+
+  // ----------------------------------------------------
+  // VÝPOČET ZOSTÁVAJÚCEHO ČASU (dni, hodiny, minúty, sekundy)
+  // ----------------------------------------------------
+
+  const days = Math.floor(distance / MS_PER_DAY);
+  const hours = Math.floor((distance % MS_PER_DAY) / (1000 * 60 * 60));
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  // Vloženie do HTML a zabezpečenie dvojciferného formátu
+  // Vloženie hlavného odpočítavania do HTML (DNI A ČAS)
   document.getElementById("countdown").innerHTML = `${days} dní ${String(
     hours
   ).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(
     seconds
   ).padStart(2, "0")}`;
 
-  // Keď odpočítavanie skončí
-  if (distance < 0) {
-    clearInterval(countdownFunction);
-    document.getElementById("countdown").innerHTML = "Sme už manželia!";
-  }
+  // ----------------------------------------------------
+  // VÝPOČET DETAILOV (mesiace, týždne, celkové hodiny/minúty/sekundy)
+  // ----------------------------------------------------
+
+  // Približný počet mesiacov (priemerne 30.44 dňa v mesiaci)
+  const totalMonths = Math.floor(distance / (MS_PER_DAY * 30.44));
+
+  // Presný počet celých týždňov
+  const totalWeeks = Math.floor(distance / MS_PER_WEEK);
+
+  // Celkový počet hodín, minút a sekúnd
+  const totalHours = Math.floor(distance / (1000 * 60 * 60));
+  const totalMinutes = Math.floor(distance / (1000 * 60));
+  const totalSeconds = Math.floor(distance / 1000);
+
+  const detailsHTML = `
+        <p>ostáva <strong>${totalMonths}</strong> mesiacov</p>
+        <p>ostáva <strong>${totalWeeks}</strong> týždňov</p>
+        <p>celkovo ostáva <strong>${totalHours.toLocaleString(
+          "sk-SK"
+        )}</strong> hodín</p>
+        <p>celkovo ostáva <strong>${totalMinutes.toLocaleString(
+          "sk-SK"
+        )}</strong> minút</p>
+        <p>celkovo ostáva <strong>${totalSeconds.toLocaleString(
+          "sk-SK"
+        )}</strong> sekúnd</p>
+        <p style="margin-top: 10px;">... do začatia obradu 1. mája 2026 o 15:00.</p>
+    `;
+
+  document.getElementById("countdown-details").innerHTML = detailsHTML;
 }, 1000);
+
+// ... Zvyšok súboru script.js zostáva nezmenený ...
 
 // === Kontrola Hesla ===
 
