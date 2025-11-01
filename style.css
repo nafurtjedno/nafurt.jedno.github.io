@@ -56,6 +56,64 @@ h3 {
   border-radius: 5px;
 }
 
+/* === OSOBNÉ POČÍTADLÁ (Pod Headerom) === */
+.personal-counters {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.relationship-counter {
+  background-color: white;
+  padding: 30px;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.counter-heading {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.big-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 3em;
+  font-weight: 700;
+  color: var(--primary-color);
+  line-height: 1.2;
+}
+
+.seconds-style {
+  font-size: 2em; /* Sekundy sú menšie, aby sa zmestili */
+  color: #555;
+}
+
+.small-details {
+  margin-top: 10px;
+  color: #888;
+}
+
+/* GRID pre vek */
+.age-counters-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.age-card {
+  flex: 1;
+  background-color: var(--background-color);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Responsivita pre vek */
+@media (max-width: 600px) {
+  .age-counters-grid {
+      flex-direction: column; /* Kartičky pod sebou na mobiloch */
+  }
+}
+
 /* Pridajte do style.css */
 .countdown-details {
   margin-top: 15px;

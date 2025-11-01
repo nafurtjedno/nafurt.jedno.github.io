@@ -68,7 +68,48 @@ const countdownFunction = setInterval(function () {
   document.getElementById("countdown-details").innerHTML = detailsHTML;
 }, 1000);
 
-// ... Zvyšok súboru script.js zostáva nezmenený ...
+// === OSOBNÉ POČÍTADLÁ (Vek a Vzťah) ===
+
+// Konštanty pre dôležité dátumy
+const relationshipStart = new Date("November 18, 2021 20:00:00").getTime();
+const jankaBirthday = new Date("August 31, 2000 00:00:00").getTime();
+const danielBirthday = new Date("October 23, 1997 00:00:00").getTime(); // Predpokladáme 23.10.1997
+
+function updatePersonalCounters() {
+    const now = new Date().getTime();
+    
+    // --- 1. Doba Vzťahu ---
+    let relationshipTime = now - relationshipStart;
+    
+    const relDays = Math.floor(relationshipTime / (1000 * 60 * 60 * 24));
+    const relMinutes = Math.floor(relationshipTime / (1000 * 60));
+    const relSeconds = Math.floor(relationshipTime / 1000);
+
+    // Formátovanie s medzerou (pre tisíce)
+    const formatNumber = (num) => num.toLocaleString('sk-SK');
+    
+    document.getElementById('relationship-days').innerText = formatNumber(relDays);
+    document.getElementById('relationship-minutes').innerText = formatNumber(relMinutes);
+    document.getElementById('relationship-seconds').innerText = formatNumber(relSeconds);
+    
+    // --- 2. Vek v sekundách ---
+    
+    // Jankin vek
+    const jankaAgeSeconds = Math.floor((now - jankaBirthday) / 1000);
+    document.getElementById('janka-seconds').innerText = formatNumber(jankaAgeSeconds);
+    
+    // Danielov vek
+    const danielAgeSeconds = Math.floor((now - danielBirthday) / 1000);
+    document.getElementById('daniel-seconds').innerText = formatNumber(danielAgeSeconds);
+}
+
+// === AKTUALIZÁCIA - Spustenie funkcie ===
+
+// Nastavte interval pre osobné počítadlá
+const personalCountersInterval = setInterval(updatePersonalCounters, 1000);
+
+// Spustenie prvýkrát po načítaní
+document.addEventListener('DOMContentLoaded', updatePersonalCounters);
 
 // === Kontrola Hesla ===
 
@@ -143,4 +184,4 @@ function prevImage(galleryId) {
   showImage(galleryId, prevIndex);
 }
 
-// ... Zvyšné funkcie (toggleMenu, checkPassword, countdownFunction) zostávajú bez zmeny ...
+
